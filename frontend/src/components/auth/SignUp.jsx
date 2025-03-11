@@ -1,4 +1,3 @@
-import { USER_API_END_POINT } from '@/utils/constant'
 import { setLoading } from '@/redux/authSlice'
 import axios from 'axios'
 import React, { useState } from 'react'
@@ -45,7 +44,7 @@ function SignUp() {
         
         try {
             dispatch(setLoading(true))
-            const res = await axios.post(`${USER_API_END_POINT}/register`, formData, {
+            const res = await axios.post(`${process.env.USER_API_END_POINT}/register`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },
