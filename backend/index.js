@@ -24,15 +24,16 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin: 'http://localhost:5173',
-    'https://jobhuntfrontend.onrender.com',
-    'https://guest-house-frontend.vercel.app',
-    'https://guest-house-frontend-git-main-mohammad-anas-projects-290bb13b.vercel.app',
-    credentials:true
-}
+    origin: [
+        'http://localhost:5173',
+        'https://jobhuntfrontend.onrender.com',
+        'https://guest-house-frontend.vercel.app',
+        'https://guest-house-frontend-git-main-mohammad-anas-projects-290bb13b.vercel.app'
+    ],
+    credentials: true
+};
 app.use(cors(corsOptions))
-
-
+app.options('*', cors(corsOptions));
  
 const PORT = process.env.PORT || 8000;
 
