@@ -27,6 +27,7 @@ const corsOptions = {
     origin: 'http://localhost:5173',
     'https://jobhuntfrontend.onrender.com',
     'https://guest-house-frontend.vercel.app',
+    'https://guest-house-frontend-git-main-mohammad-anas-projects-290bb13b.vercel.app',
     credentials:true
 }
 app.use(cors(corsOptions))
