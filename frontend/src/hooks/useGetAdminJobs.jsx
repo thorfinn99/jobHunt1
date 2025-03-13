@@ -10,7 +10,7 @@ const useGetAdminJobs = () => {
     useEffect(() => {
         const fetchAllAdminJobs = async () => {
             try { 
-                const res = await axios.get(`${JOB_API_END_POINT}/getadminjobs`, {withCredentials:true})
+                const res = await axios.get(`${import.meta.env.VITE_JOB_API_END_POINT}/getadminjobs`, {withCredentials:true})
                 console.log("Response received:", res);
                 if(res.data.success){
                     console.log("Dispatching jobs to Redux store:", res.data.jobs);
