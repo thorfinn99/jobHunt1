@@ -25,7 +25,7 @@ function JobDescription() {
   useEffect(() => {
     const fetchSingleJob = async () => {
        try {
-            const res = await axios.get(`${JOB_API_END_POINT}/get/${jobId}`, {withCredentials:true} )
+            const res = await axios.get(`${import.meta.env.VITE_JOB_API_END_POINT}/get/${jobId}`, {withCredentials:true} )
             if(res.data.success){
               dispatch(setSingleJob(res.data.job))
             }
