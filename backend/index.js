@@ -29,7 +29,8 @@ const corsOptions = {
             'http://localhost:5173',
             'https://jobhuntfrontend.onrender.com',
             'https://guest-house-frontend.vercel.app',
-            'https://guest-house-frontend-git-main-mohammad-anas-projects-290bb13b.vercel.app'
+            'https://guest-house-frontend-git-main-mohammad-anas-projects-290bb13b.vercel.app',
+            'https://job-hunt1.vercel.app'
         ];
 
         if (!origin || allowedOrigins.includes(origin)) {
