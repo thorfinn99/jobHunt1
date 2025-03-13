@@ -23,7 +23,7 @@ app.get("/home", (req,res)=> {
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-app.use(cors({
+const corsOptions = {
     origin: (origin, callback) => {
         const allowedOrigins = [
             'http://localhost:5173',
@@ -41,10 +41,11 @@ app.use(cors({
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
-}));
+};
 
-app.options('*', cors(corsOptions));
- 
+app.use(cors(corsOptions));
+
+// app.options('*', cors(corsOptions));  // Optional: Enable preflight requests
 const PORT = process.env.PORT || 8000;
 
 app.use("/api/v1/user", userRoute)
