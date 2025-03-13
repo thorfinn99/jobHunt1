@@ -40,7 +40,7 @@ function PostJobs() {
      
      try { 
       setLoading(true)
-       const res = await axios.post(`${JOB_API_END_POINT}/post`, input, {
+       const res = await axios.post(`${import.meta.env.VITE_JOB_API_END_POINT}/post`, input, {
           headers:{
             'Content-Type': 'application/json'
           },
