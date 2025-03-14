@@ -41,7 +41,7 @@ function JobDescription() {
       const jobId = singleJob?._id;
       const userId = user?._id;
 
-      const res = await axios.get(`${APPLICATION_API_END_POINT}/apply/${jobId}`, {withCredentials:true} );
+      const res = await axios.get(`${import.meta.env.VITE_APPLICATION_API_END_POINT}/apply/${jobId}`, {withCredentials:true} );
       console.log(res.data);
       
       if(res.data.success) {
