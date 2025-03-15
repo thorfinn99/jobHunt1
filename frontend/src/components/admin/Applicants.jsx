@@ -40,7 +40,7 @@ function Applicants() {
   useEffect(()=> {
         const fetchApplicants = async ()=> {
             try {
-                const res = await axios.get(`${APPLICATION_API_END_POINT}/${params.id}/applicants`, {withCredentials:true})
+                const res = await axios.get(`${import.meta.env.VITE_APPLICATION_API_END_POINT}/${params.id}/applicants`, {withCredentials:true})
                 if(res.data.success){
                     dispatch(setAllApplicants(res.data.job))
                 }
